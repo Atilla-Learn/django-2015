@@ -61,6 +61,7 @@ Pour voir les différences entre 2 étapes/leçons, vous pouvez utiliser la comm
 ### step-1
 
 - Création du projet Django
+- Création de l'app **web**
 
 
 
