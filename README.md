@@ -70,6 +70,11 @@ Pour voir les différences entre 2 étapes/leçons, vous pouvez utiliser la comm
 - Utilisation d'une vue vers l'url créée
 
 
+### step-3
+
+- Utilisation du template engine django
+
+
 ## Contact
 
 Pour toute question supplémentaire, vous pouvez nous contacter : **contact@atilla.org**
