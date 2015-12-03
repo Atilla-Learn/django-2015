@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns/website#">
   <head>
@@ -16,9 +18,9 @@
     <meta property="og:description" content="Learn est la plateforme d'appretissage de Atilla. Retrouvez nos talks, formations et conférences.">
 
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="vendor/Materialize/dist/css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'vendor/Materialize/dist/css/materialize.min.css' %}" media="screen,projection"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css" charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" charset="utf-8">
 
     <title>Atilla Learn</title>
     <meta name="description" content="Learn est la plateforme d'appretissage de Atilla. Retrouvez nos talks, formations et conférences.">
@@ -43,7 +45,7 @@
             <p>
               En partenariat avec
             </p>
-            <img src="img/eisti.png" alt="" />
+            <img src="{% static 'img/eisti.png' %}" alt="" />
           </div>
         </div>
     </header>
@@ -57,9 +59,9 @@
               <a href="#!" class="brand-logo">Présentation</a>
 
               <div class="right hide-on-small-only" style="padding-top:7px;">
-                <a href="https://twitter.com/cy106" target="_blank"><img height="50" width="50" src="img/twitter.png"></a>
-                <a href="https://www.facebook.com/atilla.org/" target="_blank"><img height="50" width="50" src="img/fb.png"></a>
-                <a href="https://www.youtube.com/channel/UCvhqFFyH0V-6FBhzvuG58Jg" target="_blank"><img height="50" width="50" src="img/youtube.png"></a>
+                <a href="https://twitter.com/cy106" target="_blank"><img height="50" width="50" src="{% static 'img/twitter.png' %}"></a>
+                <a href="https://www.facebook.com/atilla.org/" target="_blank"><img height="50" width="50" src="{% static 'img/fb.png' %}"></a>
+                <a href="https://www.youtube.com/channel/UCvhqFFyH0V-6FBhzvuG58Jg" target="_blank"><img height="50" width="50" src="{% static 'img/youtube.png' %}"></a>
               </div>
             </div>
           </div>
@@ -67,7 +69,7 @@
     
   <div class="row blue-grey darken-3">
     <div class="col offset-m2 m8 s12">
-      <img src="img/prompt.png" class="responsive-img">
+      <img src="{% static 'img/prompt.png' %}" class="responsive-img">
     </div>
     <div class="col s12 blue-grey darken-2 center">
       <h4>
@@ -107,7 +109,7 @@
       </a>
     </div>
     <div class="col s5 offset-s1">
-      <img src="img/logocircle.png" width="100%">
+      <img src="{% static 'img/logocircle.png' %}" width="100%">
     </div>
   </div>
 
@@ -117,7 +119,7 @@
         <h3 class="white-text">Talks</h3>
       </div>
       <div class="col s5 center">
-        <img src = "img/prompt_talks.png" class="responsive-img" width="90%">
+        <img src = "{% static 'img/prompt_talks.png' %}" class="responsive-img" width="90%">
       </div>
       <div class="col s6 offset-s1">
         <p class="white-text flow-text" align="justify" style="padding: 1px 0;">
@@ -148,7 +150,7 @@
     </div>
     <div class="col s5 offset-s1">
       <p style="padding: 1px 0;"></p>
-      <img src="img/prompt_confs.png" class="valign responsive-img" width="90%">
+      <img src="{% static 'img/prompt_confs.png' %}" class="valign responsive-img" width="90%">
     </div>
   </div>
   <p style="padding: 1px 0;"></p>
@@ -187,7 +189,7 @@
 
     
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="vendor/Materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'vendor/Materialize/dist/js/materialize.min.js' %}"></script>
 
     
 <script>
