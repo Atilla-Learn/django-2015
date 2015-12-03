@@ -64,6 +64,11 @@ Pour voir les différences entre 2 étapes/leçons, vous pouvez utiliser la comm
 - Création de l'app **web**
 
 
+### step-2
+
+- Création d'une url
+- Utilisation d'une vue vers l'url créée
+
 
 ## Contact
 
