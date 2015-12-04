@@ -13,3 +13,6 @@ class Item(models.Model):
 	date = models.DateField("Date de la présentation", null=True, blank=True)
 	short = models.TextField("Courte description", blank=True)
 	replay_id = models.CharField("Id du replay",  max_length=50, blank=True)
+
+	def __str__(self):
+		return self.get_type_display() + " " + self.title
