@@ -75,6 +75,12 @@ Pour voir les différences entre 2 étapes/leçons, vous pouvez utiliser la comm
 - Utilisation du template engine django
 
 
+### step-4
+
+- Panel Administration
+- Utilisation des modèles
+
+
 ## Contact
 
 Pour toute question supplémentaire, vous pouvez nous contacter : **contact@atilla.org**
