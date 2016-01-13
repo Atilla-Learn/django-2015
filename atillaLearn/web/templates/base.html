@@ -35,9 +35,9 @@
           </a>
 
           <ul style="width:240px;">
-            <li><a class="flow-text" href="#">Formations <span class="badge">{{ num.trainings }}</span></a></li>
+            <li><a class="flow-text" href="{% url 'trainings' %}">Formations <span class="badge">{{ num.trainings }}</span></a></li>
             <li><a class="flow-text" href="{% url 'talks' %}">Talks <span class="badge">{{ num.talks }}</span></a></li>
-            <li><a class="flow-text" href="#">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
+            <li><a class="flow-text" href="{% url 'conferences' %}">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
           </ul>
 
           <div class="partners center">
@@ -84,9 +84,9 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Liens</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#">Formations</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'trainings' %}">Formations</a></li>
               <li><a class="grey-text text-lighten-3" href="{% url 'talks' %}">Talks</a></li>
-              <li><a class="grey-text text-lighten-3" href="#">Conférences</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'conferences' %}">Conférences</a></li>
             </ul>
           </div>
         </div>

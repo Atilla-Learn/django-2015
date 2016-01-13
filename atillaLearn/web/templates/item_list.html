@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+
+  <div class="container">
+
+    <h3 class="yellow-text text-darken-2">{% block list_title %} {% endblock %}</h3>
+    <p class="flow-text">
+      {% block list_description %} {% endblock %}
+    </p>
+
+    {% for item in object_list %}
+      <div class="row">
+        <a class="col m6 s12" href="{% url 'detail' item.pk %}">
+        <div class="card-panel no-padding row z-depth-1 hoverable black-text">
+        <div class="col s4 no-padding">
+          {% if item.image %}
+            <img src="/media/{{item.image}}" class="responsive-img"/>
+          {% else %}
+            <img src="{% static 'img/prompt_talks.png' %}" class="responsive-img"/>
+          {% endif %}
+        </div>
+        <div class="col s8">
+          <h4 class="date"><i class="fa fa-calendar-o"></i> {{item.date|date:"SHORT_DATE_FORMAT"}}</h4>
+          <h2 class="name">{{item.title}}</h2>
+          <p>{{item.short}}</p>
+        </div>
+        </div>
+        </a>
+      </div>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+$(document).ready(function(){
+  $('#topbutton').click(function(){
+    $('html, body').animate({
+           scrollTop: 790
+       }, 800);
+  });
+  $('ul.tabs').tabs();
+});
+</script>
+{% endblock %}

@@ -1,52 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'item_list.html' %}
 
 {% load staticfiles %}
 
+{% block title %}Les talktillas{% endblock %}
+{% block description %}Liste des talks proposée par Atilla{% endblock %}
 {% block subtitle %}Talktillas{% endblock %}
 
-{% block content %}
-
-  <div class="container">
-
-    <h3 class="yellow-text text-darken-2">Talks</h3>
-    <p class="flow-text">
-    Vous trouverez ici tous les talks. Et ça c'est cool.
-    </p>
-
-    {% for talk in object_list %}
-      <div class="row">
-        <a class="col m6 s12" href="{% url 'detail' talk.pk %}">
-        <div class="card-panel no-padding row z-depth-1 hoverable black-text">
-        <div class="col s4 no-padding">
-          {% if talk.image %}
-            <img src="/media/{{talk.image}}" class="responsive-img"/>
-          {% else %}
-            <img src="{% static 'img/prompt_talks.png' %}" class="responsive-img"/>
-          {% endif %}
-        </div>
-        <div class="col s8">
-          <h4 class="date"><i class="fa fa-calendar-o"></i> {{talk.date|date:"SHORT_DATE_FORMAT"}}</h4>
-          <h2 class="name">{{talk.title}}</h2>
-          <p>{{talk.short}}</p>
-        </div>
-        </div>
-        </a>
-      </div>
-    {% endfor  %}
-
-  </div>
-
-{% endblock %}
-
-{% block script %}
-<script>
-$(document).ready(function(){
-  $('#topbutton').click(function(){
-    $('html, body').animate({
-           scrollTop: 790
-       }, 800);
-  });
-  $('ul.tabs').tabs();
-});
-</script>
-{% endblock %}
+{% block list_title %}Talks{% endblock %}
+{% block list_description %}Vous trouverez ici tous les talks. Et ça c'est cool.{% endblock %}

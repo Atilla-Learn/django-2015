@@ -9,11 +9,23 @@ from .models import Item
 def index(request):
     return render_to_response('index.html')
 
+class TrainingListView(ListView):
+
+    model = Item
+    queryset = Item.objects.filter(type=Item.TRAINING)
+    template_name = 'trainings.html'
+
 class TalkListView(ListView):
 
     model = Item
     queryset = Item.objects.filter(type=Item.TALK)
     template_name = 'talks.html'
+
+class ConferenceListView(ListView):
+
+    model = Item
+    queryset = Item.objects.filter(type=Item.CONFERENCE)
+    template_name = 'conferences.html'
 
 class ItemDetailView(DetailView):
 
