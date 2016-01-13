@@ -15,11 +15,11 @@
 
     {% for talk in object_list %}
       <div class="row">
-        <a class="col m6 s12" href="#">
+        <a class="col m6 s12" href="{% url 'detail' talk.pk %}">
         <div class="card-panel no-padding row z-depth-1 hoverable black-text">
         <div class="col s4 no-padding">
           {% if talk.image %}
-            <img src="media/{{talk.image}}" class="responsive-img"/>
+            <img src="/media/{{talk.image}}" class="responsive-img"/>
           {% else %}
             <img src="{% static 'img/prompt_talks.png' %}" class="responsive-img"/>
           {% endif %}

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block subtitle %}
+{% if item.type == item.CONFERENCE %}
+Conférences >
+{% elif item.type == item.TRAINING %}
+Formations >
+{% elif item.type == item.TALK  %}
+Talktillas >
+{% endif %}
+{{item.title}}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h3 class="yellow-text text-darken-2">{{item.title}}</h3>
+  <p class="flow-text">{{item.short}}</p>
+  <div class="card-panel">
+
+    {% if item.replay_id %}
+      <div class="video-container center">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/{{item.replay_id}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    {% elif item.image %}
+      <div class="center">
+        <img src="/media/{{item.image}}" class="responsive-img"/>
+      </div>
+    {% else %}
+      <div class="center">
+        Il n'y a pas de replay.
+      </div>
+    {% endif %}
+
+  </div>
+  <div class="row">
+    <div class="col l7 s12">
+      <div class="card-panel teal">
+        <span class="white-text">
+          <h4>Description</h4>
+          {{item.short}}
+        </span>
+      </div>
+
+    </div>
+    <div class="col l5 s12">
+      <div class="card grey darken-3">
+        <div class="card-content white-text">
+          <span class="flow-text"><i class="fa fa-calendar-o"></i>  {{item.date|date:"SHORT_DATE_FORMAT"}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+$(document).ready(function(){
+  $('#topbutton').click(function(){
+    $('html, body').animate({
+           scrollTop: 790
+       }, 800);
+  });
+  $('ul.tabs').tabs();
+});
+</script>
+{% endblock %}
