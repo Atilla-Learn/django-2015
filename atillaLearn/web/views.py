@@ -7,27 +7,43 @@ from .models import Item
 # Create your views here.
 
 def index(request):
-    return render_to_response('index.html')
+    context = {
+        'num_trainings': Item.objects.filter(type=Item.TRAINING).count(),
+        'num_conferences': Item.objects.filter(type=Item.CONFERENCE).count(),
+        'num_talks': Item.objects.filter(type=Item.TALK).count(),
+    }
+    return render(request, 'index.html', context=context)
 
-class TrainingListView(ListView):
+class CountItems(object):
+
+    def get_context_data(self, **kwargs):
+        context = super(CountItems, self).get_context_data(**kwargs)
+        context.update({
+            'num_trainings': Item.objects.filter(type=Item.TRAINING).count(),
+            'num_conferences': Item.objects.filter(type=Item.CONFERENCE).count(),
+            'num_talks': Item.objects.filter(type=Item.TALK).count(),
+        })
+        return context
+
+class TrainingListView(CountItems, ListView):
 
     model = Item
     queryset = Item.objects.filter(type=Item.TRAINING)
     template_name = 'trainings.html'
 
-class TalkListView(ListView):
+class TalkListView(CountItems, ListView):
 
     model = Item
     queryset = Item.objects.filter(type=Item.TALK)
     template_name = 'talks.html'
 
-class ConferenceListView(ListView):
+class ConferenceListView(CountItems, ListView):
 
     model = Item
     queryset = Item.objects.filter(type=Item.CONFERENCE)
     template_name = 'conferences.html'
 
-class ItemDetailView(DetailView):
+class ItemDetailView(CountItems, DetailView):
 
     model = Item
     template_name = 'item_detail.html'
