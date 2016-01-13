@@ -30,14 +30,14 @@
     {# Header #}
     <header>
         <div class="side-nav fixed" id="mobile-demo">
-          <a href="index.html" class="brand-logo flow-text blue-grey darken-3">
+          <a href="{% url 'index' %}" class="brand-logo flow-text blue-grey darken-3">
             <span class="yellow-text text-darken-2">>~/</span>Learn
           </a>
 
           <ul style="width:240px;">
-            <li><a class="flow-text" href="trainings.html">Formations <span class="badge">{{ num.trainings }}</span></a></li>
-            <li><a class="flow-text" href="talks.html">Talks <span class="badge">{{ num.talks }}</span></a></li>
-            <li><a class="flow-text" href="conferences.html">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
+            <li><a class="flow-text" href="#">Formations <span class="badge">{{ num.trainings }}</span></a></li>
+            <li><a class="flow-text" href="{% url 'talks' %}">Talks <span class="badge">{{ num.talks }}</span></a></li>
+            <li><a class="flow-text" href="#">Conférences <span class="badge">{{ num.conferences }}</span></a></li>
           </ul>
 
           <div class="partners center">
@@ -84,9 +84,9 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Liens</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="trainings.html">Formations</a></li>
-              <li><a class="grey-text text-lighten-3" href="talks.html">Talks</a></li>
-              <li><a class="grey-text text-lighten-3" href="conferences.html">Conférences</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Formations</a></li>
+              <li><a class="grey-text text-lighten-3" href="{% url 'talks' %}">Talks</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Conférences</a></li>
             </ul>
           </div>
         </div>
