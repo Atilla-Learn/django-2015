@@ -15,7 +15,7 @@ Vous retrouverez l'ensemble de la formation sur notre site internet http://learn
 
 ## Prérequis
 
-Aucun, cette formation est disponible pour tous quelque soit votre niveau. 
+Aucun, cette formation est disponible pour tous quelque soit votre niveau.
 
 
 ## Installation
@@ -43,7 +43,7 @@ pip3 install django
 Une fois installé, nous pouvons commencer :)
 
 
-## Commits / Formation 
+## Commits / Formation
 
 Vous pouvez aller à chaque étape de la formation en faisant :
     git checkout step-?
@@ -80,8 +80,10 @@ Pour voir les différences entre 2 étapes/leçons, vous pouvez utiliser la comm
 - Panel Administration
 - Utilisation des modèles
 
+### step-5
+
+- Utilisation des vues génériques
 
 ## Contact
 
 Pour toute question supplémentaire, vous pouvez nous contacter : **contact@atilla.org**
-
